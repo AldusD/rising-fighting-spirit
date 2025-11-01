@@ -1,7 +1,6 @@
 #pragma once
-#include <iostream>
 
 class Game {
-public:
+public: 
     void run();
 };
