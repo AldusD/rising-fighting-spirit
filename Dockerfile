@@ -1,5 +1,10 @@
 FROM gcc:13
 
+# TODO evaluate if needed
+# RUN apt-get update && apt-get install -y \
+#     libsfml-dev \
+#     && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 COPY . .

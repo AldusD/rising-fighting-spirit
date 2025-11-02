@@ -1,14 +1,11 @@
 #pragma once
 
-#include "Event.h"
-#include <iostream>
+#include "./Event/Event.h"
+#include "./EventResponse/EventResponse.h"
 
-struct EventResponse {
-    bool handled;
-    std::string responseMessage;
-};
+using namespace std;
 
 class Events {
 public:
-    EventResponse handleEvent(const Event& event);
+    EventResponse triggerEvent(Event event);
 };
