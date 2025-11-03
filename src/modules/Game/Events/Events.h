@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Events {
+class Events { // bridge connecting business logic (gameplay mod) and user interaction (interface mod)
 public:
     EventResponse triggerEvent(Event event);
 };

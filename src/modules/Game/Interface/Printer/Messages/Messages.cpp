@@ -9,5 +9,5 @@ string Messages::getMessage(string title) {
         return Messages::LOGO;
     }
 
-    return title;
+    return "";
 };

@@ -6,8 +6,12 @@
 
 using namespace std;
 
-Event::Event(string message, EventTypeEnum type, vector<string> options) 
-    : message(message), type(type), options(options) {}
+Event::Event(string title, string message, EventTypeEnum type, vector<string> options) 
+    : title(title), message(message), type(type), options(options) {}
+
+string Event::getTitle() {
+    return title;
+}
 
 string Event::getMessage() {
     return message;
@@ -19,6 +23,10 @@ EventTypeEnum Event::getType() {
 
 vector<string> Event::getOptions() {
     return options;
+}
+
+void Event::setTitle(string title) {
+    this->title = title;
 }
 
 void Event::setMessage(string message) {

@@ -8,15 +8,25 @@
 
 using namespace std;
 
+Printer::Printer() : messages() {}
 
-void Printer::print(const string& messageTitle, const vector<string>& options, bool isFreeField) {
-    string message = messageTitle;
+void Printer::printChoice(const string& title, const string& message, const vector<string>& options) {
+    printSpecialMessage(title);
+    cout << message;
+    printOptions(options);
+}
+
+void Printer::printInput(const string& title, const string& message) {
+    printSpecialMessage(title);
     cout << message << "\n\n";
-    if (!options.empty()) {
-        printOptions(options);
-    }
-    if (isFreeField) {
-        printFreeField();
+    printFreeField();
+}
+
+void Printer::printSpecialMessage(const string& title) {
+    string specialMessage = messages.getMessage(title);
+
+    if (specialMessage.length() > 0) {
+        cout << specialMessage;
     }
 }
 
@@ -27,9 +37,13 @@ void Printer::printOptions(const vector<string>& options) {
         message += options[i];
         message += "\n";
     }
-    cout << message;
+    cout << message << "\n";
 }
 
 void Printer::printFreeField() {
-    cout << "Write your answer";
+    cout << "Write your answer\n";
+}
+
+void Printer::printSingleMessage(string message) {
+    cout << message;
 }
