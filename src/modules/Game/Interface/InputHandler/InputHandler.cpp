@@ -4,6 +4,7 @@
 
 #include <string>
 #include <iostream>
+#include <cctype>
 
 using namespace std;
 
@@ -22,12 +23,22 @@ bool InputHandler::verifyChoiceInput(int input, int range) {
 };
 
 string InputHandler::handleChoiceInput(int range) {
-    int input;
+    string input;
     cin >> input;
-    bool isValid = verifyChoiceInput(input, range);
-    return isValid ? to_string(input) : "error"; 
+    bool correctType = isNumber(input);
+    if (!correctType) return "error";
+    bool isValid = verifyChoiceInput(stoi(input), range);
+    return isValid ? input : "error"; 
 
 };
+
+bool InputHandler::isNumber(string s) {
+    if (s.empty()) return false;
+    for (char c : s) {
+        if (!isdigit(c)) return false;
+    }
+    return true;
+}
 
 string InputHandler::handleTextInput() {
     string input;

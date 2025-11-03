@@ -2,7 +2,7 @@
 
 #include "./Printer/Printer.h"
 #include "./InputHandler/InputHandler.h"
-#include "../../shared/MessagesEnum/MessagesEnum.h"
+#include "../shared/MessagesEnum/MessagesEnum.h"
 
 using namespace std;
 
