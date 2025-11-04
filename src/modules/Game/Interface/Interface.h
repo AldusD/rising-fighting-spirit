@@ -18,5 +18,5 @@ class Interface {
         string handleInput(Event event);
     public:
         string handleEvent(Event event);
-        explicit Interface() : printer(Printer()), inputHandler(InputHandler()) {}
+        explicit Interface() : printer(), inputHandler() {}
 };

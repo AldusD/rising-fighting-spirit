@@ -2,6 +2,7 @@
 
 #include "./Event/Event.h"
 #include "./EventResponse/EventResponse.h"
+#include "../Interface/Interface.h"
 
 class Interface;
 
@@ -10,8 +11,6 @@ private:
     Interface& interface;
 
 public:
-    // Constructor takes Interface reference
-    explicit Events(Interface& interface) : interface(interface) {}
-    
+    explicit Events(Interface& interface) : interface(interface) {};    
     EventResponse triggerEvent(Event event);
 };
