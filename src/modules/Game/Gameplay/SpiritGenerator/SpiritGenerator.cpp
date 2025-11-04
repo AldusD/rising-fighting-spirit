@@ -3,12 +3,13 @@
 
 #include "SpiritGenerator.h"
 #include "../../Events/Events.h"
+#include "Spirit.h"
 
 using namespace std;
 
 void SpiritGenerator::statSelection (Events events) { 
 
-    int unspent_points = 3;
+    int unspent_points = 6;
 
     vector<string> stats_names = { "inteligence", "speed", "strength", "vitality", "stamina" };
     vector<int> stats_numbers = {1, 1, 1, 1, 1};
@@ -29,5 +30,9 @@ void SpiritGenerator::statSelection (Events events) {
 
         unspent_points -= 1;
     }
-    // THERE NEEDS TO BE A WAY TO SAVE THE STATS SOMEWHERE, THEY ARE STORED IN stats_names!
+    
+    Spirit player_spirit(vector<int> stats_numbers);
+    // PRINT THE EVENT AT THE END OF SPIRIT CREATION
+
+
 }

@@ -11,8 +11,8 @@ using namespace std;
 Menu Menus::getMenu(string menuTitle) {
     if (menuTitle == "start") {
         vector<string> options = { "New Game", "Load Game", "Update Game", "Exit -_-" };
-        string message = "May your Spirit be pure, may you Will be strong\n";
-        vector<string> actions = { "", "", "", "exit" };
+        string message = "May your Spirit be pure, may your Will be strong\n";
+        vector<string> actions = { "generate_spirit", "", "", "exit" };
         vector<string> nextMenus = { "update_user", "update_user", "update_user",  "update_user" }; // TODO change it to correct values
         return Menu(menuTitle, message, options, actions, nextMenus);
     }

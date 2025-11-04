@@ -39,8 +39,9 @@ string Gameplay::handleAction(string action) {
     }
 
     if (action == "generate_spirit") {
-        // calls generate spirit module...
-        return "continue"; // even if there is things to do, the result is going to tournament selection menu, which is handled by the previous menu
+        SpiritGenerator spiritgenerator;
+        spiritgenerator.statSelection(events);
+        return "continue"; // even if there is things to do, the result is going to tournament selection menu, which is handled by the previous menu 
     }
     
     return "continue";
