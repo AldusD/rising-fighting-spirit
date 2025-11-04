@@ -12,7 +12,7 @@ string Interface::handleEvent(Event event) {
     string response;
 
     if (event.getType() == EventTypeEnum::CHOICE) {
-        int range = (int) event.getOptions().size();
+        int range = (int) event.getOptions().size() + 1; //the 1 offsets the difference between the two types of values
         printer.printChoice(event.getTitle(), event.getMessage(), event.getOptions());
         string choice = inputHandler.handleChoiceInput(range);
         while(choice == "error") {
