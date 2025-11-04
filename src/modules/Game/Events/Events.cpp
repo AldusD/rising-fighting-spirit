@@ -8,7 +8,7 @@
 using namespace std;
 
 EventResponse Events::triggerEvent(Event event) {
-    Interface interface;
+    Interface interface; // TODO RECREATE TO BE SINGLE INSTANCE FOR GAME (take to constructor)
     string response = interface.handleEvent(event);
     EventResponse res = EventResponse(response);
         

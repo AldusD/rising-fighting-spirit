@@ -12,12 +12,15 @@ string Interface::handleEvent(Event event) {
     string response;
 
     if (event.getType() == EventTypeEnum::CHOICE) {
-        int range = (int) event.getOptions().size();
+        // handle printing
         printer.printChoice(event.getTitle(), event.getMessage(), event.getOptions());
+        
+        // handle input
+        int range = (int) event.getOptions().size() + 1;
         string choice = inputHandler.handleChoiceInput(range);
         while(choice == "error") {
             printer.printSingleMessage(MessagesEnum::INVALID_CHOICE);
-            string choice = inputHandler.handleChoiceInput(range);
+            choice = inputHandler.handleChoiceInput(range);  // Remove 'string' - update existing variable
         }
         return choice;
     }
@@ -27,5 +30,5 @@ string Interface::handleEvent(Event event) {
         return inputHandler.handleTextInput();
     }
     
-    return "error"; // just so it compile
+    return "error"; // just so it compiles
 };

@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include <cctype>
+#include <limits>
 
 using namespace std;
 
@@ -25,11 +26,11 @@ bool InputHandler::verifyChoiceInput(int input, int range) {
 string InputHandler::handleChoiceInput(int range) {
     string input;
     cin >> input;
+    
     bool correctType = isNumber(input);
     if (!correctType) return "error";
     bool isValid = verifyChoiceInput(stoi(input), range);
     return isValid ? input : "error"; 
-
 };
 
 bool InputHandler::isNumber(string s) {
@@ -43,6 +44,7 @@ bool InputHandler::isNumber(string s) {
 string InputHandler::handleTextInput() {
     string input;
     cin >> input;
+    
     bool isValid = verifyTextInput(input);
     return isValid ? input : "error";
 };
