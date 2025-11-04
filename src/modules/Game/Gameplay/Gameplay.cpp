@@ -4,6 +4,7 @@
 #include "Gameplay.h"
 #include "../Events/Events.h"
 #include "SpiritGenerator/SpiritGenerator.h"
+#include "./PlayerHandler/PlayerHandler.h"
 
 #include <string>
 
@@ -35,6 +36,12 @@ void Gameplay::start() { // handles game flow between menus and actions
 
 string Gameplay::handleAction(string action) {
     if (action == "exit") {
+        return "exit";
+    }
+
+    if (action == "create_player") {
+        PlayerHandler handler(dbClient_, events);
+        handler.createPlayer();
         return "exit";
     }
 

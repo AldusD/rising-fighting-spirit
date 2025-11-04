@@ -12,7 +12,7 @@ Menu Menus::getMenu(string menuTitle) {
     if (menuTitle == "start") {
         vector<string> options = { "New Game", "Load Game", "Update Game", "Exit -_-" };
         string message = "May your Spirit be pure, may you Will be strong\n";
-        vector<string> actions = { "", "", "", "exit" };
+        vector<string> actions = { "create_player", "", "", "exit" };
         vector<string> nextMenus = { "update_user", "update_user", "update_user",  "update_user" }; // TODO change it to correct values
         return Menu(menuTitle, message, options, actions, nextMenus);
     }
