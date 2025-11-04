@@ -6,7 +6,7 @@
 using namespace std;
 
 void PlayerHandler::createPlayer() {
-    Event event = Event("create_user", "Tell me warrior, what is your name", EventTypeEnum::INPUT, {});
+    Event event = Event("create_user", "Tell me warrior, what is your name?", EventTypeEnum::INPUT, {});
     string nameInput = events.triggerEvent(event).getMessage();
     
     // handling wrong names
