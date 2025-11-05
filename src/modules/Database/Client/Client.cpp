@@ -91,14 +91,21 @@ Spirit Client::findSpirit(const string& name) {
     try {
         auto txn = db_.createWork();
         pqxx::result r = txn->exec_params(
-            "SELECT id, name FROM spirits WHERE ownerId = $1 LIMIT 1",
+            "SELECT id, ownerId, intelligence, speed, strength, vitality, stamina, type, nature FROM spirits WHERE ownerId = $1 LIMIT 1",
             ownerId
         );
         txn->commit();
         if (!r.empty()) {
             auto row = r[0];
-            player.id = row[""].as<int>();
-            player.name = row["name"].as<string>();
+            spirit.id = row["id"].as<int>();
+            spirit.ownerId = row["ownerId"].as<int>();
+            spirit.intelligence = row["intelligence"].as<int>();
+            spirit.speed = row["speed"].as<int>();
+            spirit.strength = row["strength"].as<int>();
+            spirit.vitality = row["vitality"].as<int>();
+            spirit.stamina = row["stamina"].as<int>();
+            spirit.type = row["type"].as<int>();
+            spirit.nature = row["nature"].as<int>();
         }
     } catch (const exception& e) {
         cerr << "DB findPlayer error: " << e.what() << endl;
