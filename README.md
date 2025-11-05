@@ -1,20 +1,18 @@
-# game
+# To run the game you need a c++ compiler and a docker
 
-## How to run
+## To run, frist type this command, to clear the docker and prevent errors
 ```bash
-    docker-compose up --build
-    docker-compose run --rm app ## RUN THIS IN A DIFFERENT CONSOLE
-```
-
-    After ending development, run this to clean memory usage
-```bash
-    docker rmi -f $(docker images -a -q)
-
-    # if needs to clean db
     docker compose down -v
 ```
 
-To check DB container
+
+## Then type this command to build
 ```bash
-    docker exec -it postgres_db psql -U postgres -d mydb
+   docker-compose up --build
+```
+
+
+## Then, in a different console (you MUST open a different console), you type this command to run
+```bash
+    docker-compose run --rm app
 ```

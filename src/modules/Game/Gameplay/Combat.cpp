@@ -10,7 +10,7 @@ string Combat::minorcombat (Events events, vector<int> player_stats){
 
     string result = "";
     player_hp = 8+2*player_vitality; //thus the hp is 10 + 2*amount invested, and the game is balanced for a player that took no vitality
-    foe_hp = 15;
+    foe_hp = 20;
     foe_damage = 2;
     int last_damage_dealt = 0; //damage of the last attack you dealt
     vector<string> attack_options = {"strike a weak spot", "multi attack", "quick jab", "tire out your opponent", "dodge and retaliate", "wait for an opening"};
@@ -91,7 +91,7 @@ string Combat::greatercombat (Events events, vector<int> player_stats){
 
     string result = "";
     player_hp = 8+2*player_vitality; //thus the hp is 10 + 2*amount invested, and the game is balanced for a player that took no vitality
-    foe_hp = 20;
+    foe_hp = 24;
     foe_damage = 3;
     int last_damage_dealt = 0; //damage of the last attack you dealt
     vector<string> attack_options = {"strike a weak spot", "multi attack", "quick jab", "tire out your opponent", "dodge and retaliate", "wait for an opening"};
