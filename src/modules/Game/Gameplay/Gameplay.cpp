@@ -47,14 +47,16 @@ string Gameplay::handleAction(string action) {
 
     if (action == "create_player") {
         PlayerHandler handler(dbClient_, events);
-        handler.createPlayer();
-        return "exit";
+        player_name = handler.createPlayer();
+        SpiritGenerator spiritgenerator;
+        player_stats = spiritgenerator.statSelection(events);
+        return "continue";
     }
 
     if (action == "generate_spirit") {
-        SpiritGenerator spiritgenerator;
-        player_stats = spiritgenerator.statSelection(events);
-        return "continue"; // even if there is things to do, the result is going to tournament selection menu, which is handled by the previous menu 
+        //SpiritGenerator spiritgenerator;
+        //player_stats = spiritgenerator.statSelection(events);
+        //return "continue"; // even if there is things to do, the result is going to tournament selection menu, which is handled by the previous menu 
     }
 
     if (action == "minorcombat") {

@@ -13,7 +13,7 @@ class PlayerHandler {
         Events& events;
     public:
         PlayerHandler(Client& dbClient, Events& events) : dbClient_(dbClient), events(events) {};
-        void createPlayer();
+        string createPlayer();
         void updatePlayer();
         void deletePlayer();
 };

@@ -20,6 +20,7 @@ private:
     Client& dbClient_;
     string handleAction(string actionType);
 
+    string player_name =  "";
     vector<int> player_stats = {0, 0, 0, 0, 0};
     string menu_override = "";
 

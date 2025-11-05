@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void PlayerHandler::createPlayer() {
+string PlayerHandler::createPlayer() {
     Event event = Event("create_user", "Tell me warrior, what is your name?", EventTypeEnum::INPUT, {});
     string nameInput = events.triggerEvent(event).getMessage();
     
@@ -29,6 +29,8 @@ void PlayerHandler::createPlayer() {
 
     // creating user
     dbClient_.insertPlayer(nameInput);
+
+    return nameInput;
 };
 
 void PlayerHandler::updatePlayer() {
